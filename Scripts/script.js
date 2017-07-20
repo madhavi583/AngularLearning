@@ -87,6 +87,7 @@ technology.incrementDislikes-- ;
   { firstName : "Madhavi",name: "ANGULAR",likes:"0",dislike:"0",dateOfBirth:new Date('August 15,1960 '),gender : "Female",salary:"1000"},
  ];
     $scope.technologies1= technologies1;
+    $scope.rowLimit=3;
 
 });
 

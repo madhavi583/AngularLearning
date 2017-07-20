@@ -100,30 +100,32 @@ capital: {{country.capital }}
 </table>
 </div>
 <div><p  align='center' >AngularJS filters</p>
+<input type="number" step="1" min="0" max="5" ng-model="rowLimit"/>
 <table border="3" align='center'>
 <thead>
 <tr><th>Name</th><th>Date Of Birth</th><th>Gender</th><th>Salary</th><th>Salary Currcy</th></tr>
 </thead>
-<tbody><tr ng-repeat="thechh in technologies1"><td>
-    {{ thechh.firstName }}
+<tbody><tr ng-repeat="thechh in technologies1 | limitTo:rowLimit"><td>
+    {{ thechh.firstName | uppercase }}
     </td>
     
     <td>
-   {{thechh.dateOfBirth}}
+   {{thechh.dateOfBirth |date :"dd/mm/yy"}}
     </td>
     <td>
-    {{thechh.gender}}
+    {{thechh.gender | lowercase}}
     </td>
     
      <td>
-  {{thechh.salary}}
+  {{thechh.salary | number : 2}}
     </td>
-    <td> {{thechh.salary}}</td>
+    <td> {{thechh.salary | currency:"$":1}}</td>
     </tr></tbody>
 
 </table>
 </div>
 
 </body>
-    </html>
+   
+ </html>
  
