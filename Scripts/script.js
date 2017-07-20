@@ -57,11 +57,17 @@ $scope.message="hello madhavi how are you";
 }
  ];
  $scope. nest= nest;
+ var madhavi=[
+        {  firstName : "venkat",  dateOfBirth:new Date('november 23,1980 '), lastNmae : "pathapati", gender : "male",salary:"100000"},
+         {  firstName : "Hannah", dateOfBirth:new Date('may 05 23,1970 '),  lastNmae : "pathapati", gender : "Female",salary:"2000"},
+           {  firstName : "Madhavi", dateOfBirth:new Date('August 15,1960 '),  lastNmae : "pathapati", gender : "Female",salary:"1000"}
+    ];
+    $scope.madhavi= madhavi;
  //handling events in angularjs
- var technologies= [{name: "PHP",likes:"0",dislike:"0"},
- {name: "DRUPAL",likes:"0",dislike:"0"},
- {name: "MYSQL",likes:"0",dislike:"0"},
-  {name: "ANGULAR",likes:"0",dislike:"0"},
+ var technologies= [{name: "PHP",likes:"0",dislike:"0",dateOfBirth:new Date('november 23,1980 '),gender : "male",salary:"100000"},
+ {firstName : "venkat",name: "DRUPAL",likes:"0",dislike:"0", dateOfBirth:new Date('may 05 23,1970 '), gender : "Female",salary:"2000"},
+ {firstName : "Hannah",name: "MYSQL",likes:"0",dislike:"0",dateOfBirth:new Date('August 15,1960 '),gender : "Female",salary:"1000"},
+  { firstName : "Madhavi",name: "ANGULAR",likes:"0",dislike:"0",dateOfBirth:new Date('August 15,1960 '),gender : "Female",salary:"1000"},
  ];
  $scope. technologies= technologies;
  // increment like
@@ -73,4 +79,14 @@ $scope. incrementDislikes= function(technology){
 
 technology.incrementDislikes-- ;
 }
+
+    var  technologies1= [{
+    firstName : "venkat", name: "PHP",likes:"0",dislike:"0",dateOfBirth:new Date('november 23,1980 '),gender : "male",salary:"100000"},
+ {firstName : "venkat",name: "DRUPAL",likes:"0",dislike:"0", dateOfBirth:new Date('may 05 23,1970 '), gender : "Female",salary:"2000"},
+ {firstName : "Hannah",name: "MYSQL",likes:"0",dislike:"0",dateOfBirth:new Date('August 15,1960 '),gender : "Female",salary:"1000"},
+  { firstName : "Madhavi",name: "ANGULAR",likes:"0",dislike:"0",dateOfBirth:new Date('August 15,1960 '),gender : "Female",salary:"1000"},
+ ];
+    $scope.technologies1= technologies1;
+
 });
+
