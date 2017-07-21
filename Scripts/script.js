@@ -89,6 +89,16 @@ technology.incrementDislikes-- ;
 //madhavi
     $scope.technologies1= technologies1;
     $scope.rowLimit=3;
+// sorting order
+var employeesort=[
+    {
+ firstName : "venkat", name: "PHP",likes:"0",dislike:"0",dateOfBirth:new Date('november 23,1980 '),gender : "male",salary:"100000"},
+ {firstName : "venkat",name: "DRUPAL",likes:"0",dislike:"0", dateOfBirth:new Date('may 05 23,1970 '), gender : "Female",salary:"2000"},
+ {firstName : "Hannah",name: "MYSQL",likes:"0",dislike:"0",dateOfBirth:new Date('August 15,1960 '),gender : "Female",salary:"1000"},
+  { firstName : "Madhavi",name: "ANGULAR",likes:"0",dislike:"0",dateOfBirth:new Date('August 15,1960 '),gender : "Female",salary:"1000"}
 
+
+];
+$scope.employeesort=employeesort;
 });
 
