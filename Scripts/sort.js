@@ -1,4 +1,4 @@
-var myApp=angular.module(myApp,[]);
+ar myApp=angular.module('myModule',[]);
 myApp.controller('myController',function($scope){
 
 //
