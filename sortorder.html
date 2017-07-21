@@ -3,16 +3,27 @@
     <head>
         <script src="/angular/Scripts/angular.min.js"></script>
         
-         <link href="/angular/CSS/style.css"></link>
-        <script src="Scripts/script.js"></script>
+        
+        
+        <script src="Scripts/sort.js"></script>
+      
+         <link rel="stylesheet" type="text/css" href="./CSS/style.css">
     </head>
-    <body style=" background-color:lightskyblue;"ng-controller="myController"  >
+    <body ng-controller="myController"  >
      <div><p  align='center' >AngularJS sortorder</p>
+     Oreder By :<select ng-model="sortCOlumn"  align='center' >
+<option value="name">asc name</option><option value="name">asc name</option>
+<option value="firstName">asc firstName</option>
+<option value="gender">asc gender</option>
+<option value="-salary">dec salary</option>
+     </select>
 <table border="3" align='center'>
 <thead>
-<tr><th>Name</th><th>Date Of Birth</th><th>Gender</th><th>Salary</th><th>Salary Currcy</th></tr>
+<tr><th</th><th>Date Of Birth</th><th>Gender</th><th>Salary</th><th>Salary Currcy</th></tr>
 </thead>
-<tbody><tr ng-repeat="thechh in technologies"><td>
+<tbody>
+    <!--<tr ng-repeat="thechh in technologies |orderBy:'-name':true"><td>-->
+    <tr ng-repeat="thechh in technologies |orderBy:sortCOlumn:reverseSort"><td>
     {{ thechh.firstName | uppercase }}
     </td>
     
@@ -31,7 +42,89 @@
 
 </table>
 </div>
+<div class="mm"><p  align='center' >AngularJS sort rows by table header</p>
 
+<table border="3" align='center'>
+<thead>
+<tr><th ng-click="sortData('name')">Name<div ng-Class="getSortClass('name')"></div></th><th ng-click="sortData('name')">Date Of Birth</th><div ng-Class="getSortClass('name')"></div><th>Gender</th><th>Salary</th><th>Salary Currcy</th></tr>
+</thead>
+<tbody>
+    <!--<tr ng-repeat="thechh in technologies |orderBy:'-name':true"><td>-->
+    <tr ng-repeat="thechh in technologies |orderBy:sortCOlumn"><td>
+    {{ thechh.firstName | uppercase }}
+    </td>
+    
+    <td>
+   {{thechh.dateOfBirth |date :"dd/mm/yy"}}
+    </td>
+    <td>
+    {{thechh.gender | lowercase}}
+    </td>
+    
+     <td>
+  {{thechh.salary | number : 2}}
+    </td>
+    <td> {{thechh.salary | currency:"$":1}}</td>
+    </tr></tbody>
+
+</table>
+
+
+</div>
+<div><p  align='center' >Search filter in AngularJS</p>
+Seraech :<input type="text" placeholder="search employee" ng-model="searchText"/ >
+<!--<input type="text" placeholder="search gender" ng-model="searchText"/ >
+<input type="checkbox" placeholder="search gender" ng-model="exactMetch"/ >-->
+<table border="3" align='center'>
+<thead>
+<tr><th</th><th>Date Of Birth</th><th>Gender</th><th>Salary</th><th>Salary Currcy</th></tr>
+</thead>
+<tbody>
+    <!--<tr ng-repeat="thechh in technologies |orderBy:'-name':true"><td>-->
+    <tr ng-repeat="thechh in employee | filter:search"><td>
+    {{ thechh.firstName | uppercase }}
+    </td>
+    
+    <td>
+   {{thechh.dateOfBirth |date :"dd/mm/yy"}}
+    </td>
+    <td>
+    {{thechh.gender | lowercase}}
+    </td>
+    
+     <td>
+  {{thechh.salary | number : 2}}
+    </td>
+    <td> {{thechh.salary | currency:"$":1}}</td>
+    </tr></tbody>
+
+</table>
+</div>
+<div>
+
+<p  align='center' >Create a custom filter in AngularJS</p>
+<table border="3" align='center'>
+<thead>
+<tr><th>Name</th><th>Gender</th><th>Salary</th></tr>
+</thead>
+<tbody>
+    <!--<tr ng-repeat="thechh in technologies |orderBy:'-name':true"><td>-->
+    <tr ng-repeat="custom in customfilter"><td>
+    {{ custom.name | uppercase }}
+    </td>
+    
+    <td>
+   {{custom.gender | gender}}
+    </td>
+    <td>
+    {{custom.salary }}
+    </td>
+    
+   
+    </tr></tbody>
+
+</table>
+</div>
 </body>
    
  </html>
