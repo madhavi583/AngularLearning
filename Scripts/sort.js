@@ -70,4 +70,13 @@ else{
   { name : "todd",dateOfBirth:new Date('August 15,1960 '),gender : "Female-3 ",salary:"1000"}
  ];
  $scope.customfilter=customfilter;
+ var salary=[
+     {name:'venkat',gender:'male',city:'london',salary:'10000000'},
+ {name:'Srinu',gender:'male',city:'krishna',salary:'1000'},
+ {name:'hannah',gender:'female',city:'banglore',salary:'1000000'},
+ {name:'prema',gender:'female',city:'hydrabad',salary:'10000'}
+
+ ];
+ $scope.salary=salary;
+
 });
