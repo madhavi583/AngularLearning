@@ -11,53 +11,31 @@
     </head>
     <body ng-controller="myController"  >
         <div>
+          
+          <input type="checkbox" ng-model="hideSalary"/> hide Salary: 
         <table border="3" align='center'>
 <thead>
-<tr><th</th><th>Date Of Birth</th><th>Gender</th><th>Salary</th><th>Salary Currcy</th></tr>
+<tr><th>Name</th><th>Gender</th><th >City</th><th ng-hide="hideSalary">Salary </th><<th ng-show="hideSalary">Salary </th></tr>
 </thead>
 <tbody>
     <!--<tr ng-repeat="thechh in technologies |orderBy:'-name':true"><td>-->
-    <tr ng-repeat="thechh in employee | filter:search"><td>
-    {{ thechh.firstName | uppercase }}
+    <tr ng-repeat="hide in salary "><td>
+    {{ hide.name | uppercase }}
     </td>
-    
-    <td>
-   {{thechh.dateOfBirth |date :"dd/mm/yy"}}
-    </td>
-    <td>
-    {{thechh.gender | lowercase}}
-    </td>
-    
-     <td>
-  {{thechh.salary | number : 2}}
-    </td>
-    <td> {{thechh.salary | currency:"$":1}}</td>
-    </tr></tbody>
-
-</table>
-</div>
-<div>
-
-<p  align='center' >Create a custom filter in AngularJS</p>
-<table border="3" align='center'>
-<thead>
-<tr><th>Name</th><th>Gender</th><th>Salary</th></tr>
-</thead>
-<tbody>
-    <!--<tr ng-repeat="thechh in technologies |orderBy:'-name':true"><td>-->
-    <tr ng-repeat="custom in customfilter"><td>
-    {{ custom.name | uppercase }}
-    </td>
-    
-    <td>
-   {{custom.gender | gender}}
-    </td>
-    <td>
-    {{custom.salary }}
-    </td>
-    
    
+    <td>
+    {{hide.gender | lowercase}}
+    </td>
+     <td >
+    {{hide.city | lowercase}}
+    </td>
+     <td ng-hide="hideSalary" >
+  {{hide.salary | number : 2}}
+    </td>
+      <td ng-show="hideSalary" >
+          #####</td>
     </tr></tbody>
 
 </table>
-</div>
+</body>
+</htnl>
