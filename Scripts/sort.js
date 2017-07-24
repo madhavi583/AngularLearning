@@ -78,5 +78,36 @@ else{
 
  ];
  $scope.salary=salary;
+ $scope.salaryView="EmployeeTable.html";
+
+  var country=[
+{
+    name:"UK",
+    cities:[
+        { name: "London"},
+        {name:"Manchester"},
+        {name:"Biramingham"},
+        ]
+},
+
+{
+    name:"USA",
+    cities:[
+        { name: "London"},
+        {name:"Manchester"},
+        {name:"Biramingham"},
+        ]
+},
+{
+    name:"INDIA",
+    cities:[
+        { name: "HYD"},
+        {name:"BNGL"},
+        {name:"AP"},
+        ]
+}
+ ];
+ $scope. country=country;
+ 
 
 });

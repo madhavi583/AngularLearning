@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="myModule">
+    <head>
+        <script src="/angular/Scripts/angular.min.js"></script>
+        
+        
+        
+        <script src="Scripts/sort.js"></script>
+        
+      
+         <link rel="stylesheet" type="text/css" href="./CSS/style.css">
+    </head>
+    <body ng-controller="myController" >
+        Select View:
+        <select ng-model="salaryView">
+            <option value="EmployeeTable.html">Table</option>
+             <option value="EmployeeList.html">List Table</option>
+        </select>
+<!--<div ng-include="'EmployeeTable.html'"></div>-->
+<div ng-include="salaryView"></div>
+
+        </body>
+</htnl>

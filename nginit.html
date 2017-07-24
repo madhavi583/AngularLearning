@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="myModule" >
+    <head>
+        <script src="/angular/Scripts/angular.min.js"></script>
+        
+        
+        
+        <script src="Scripts/sort.js"></script>
+      
+         <link rel="stylesheet" type="text/css" href="./CSS/style.css">
+    </head>
+    <body ng-controller="myController" >
+      <!--  <div ng-init="salary=[
+     {name:'venkat',gender:'male',city:'london',salary:'10000000'},
+ {name:'Srinu',gender:'male',city:'krishna',salary:'1000'},
+ {name:'hannah',gender:'female',city:'banglore',salary:'1000000'},
+ {name:'prema',gender:'female',city:'hydrabad',salary:'10000'}
+
+ ]">
+ <table border="3">
+<thead>
+    <tr>
+<th>Nmae</th><th>Gender</th><th>City</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="salary in salary">
+    <th>{{salary.name}}</th>
+<th>{{salary.gender}}</th>
+<th>{{salary.city}}</th>
+</tr>
+</tbody>
+ </table>
+            </div>-->
+
+      <div>
+<ul>
+    <li ng-repeat="country in country" ng-init="ParentIndex =$index">
+        {{country.name}} Index ={{$index}}
+        <ul><li ng-repeat="city in country.cities">
+            {{city.name}} -Parent Index={{ ParentIndex }}, Index ={{$index}}</li></ul>
+    </li>
+</ul>
+          </div>
+      
+</body>
+</htnl>

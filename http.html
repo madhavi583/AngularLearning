@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="myModule">
+    <head>
+        <script src="/angular/Scripts/angular.min.js"></script>
+        
+        
+        
+        <script src="Scripts/http.js"></script>
+        
+      
+         <link rel="stylesheet" type="text/css" href="./CSS/style.css">
+    </head>
+    <body ng-controller="myController">
+        <div>
+<table>
+    <thead>
+        <tr><th>SLNO</th><th>Name</th><th>Gender</th><th>Salary</th></tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="employee in employees">
+            <td>{{employee.id}}</td></tr>
+    </tbody>
+</table>
+
+
+</div>
+        </body>
+</htnl> 
