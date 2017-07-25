@@ -16,15 +16,15 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
-    echo "<table border='3'>";
+    //echo "<table border='3'>";
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>$row[id]</td><td>$row[Name]</td><td>$row[Gender]</td><td>$row[Salary]</td></tr>";
+       /* echo "<tr><td>$row[id]</td><td>$row[Name]</td><td>$row[Gender]</td><td>$row[Salary]</td></tr>";*/
         echo  $row["id"];
         echo  $row["Name"];
         echo  $row["Gender"];
          echo  $row["Salary"];
         }
-        echo "</table>";
+       // echo "</table>";
 } else {
     echo "0 results";
 }

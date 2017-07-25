@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
+     <script src="/angular/Scripts/angular.min.js"></script>
+<body ng-controller="myController">
+{{error}}
+<br/>
+<br/>
+<div  > 
+
+<p>HTTP :</p>
+
+<h1>{{myWelcome}}</h1>
+
+</div>
+<div>
+
+<table>
+    <thead>
+        <tr><th>SLNO</th><th>Name</th><th>Gender</th><th>Salary</th></tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="employee in myWelcome track by $index">
+            <td>{{employee.Id}}</td><td>{{employee.Name}}</td></tr>
+    </tbody>
+</table>
+
+
+
+</div>
+
+<script>
+//this correct code
+/*var app = angular.module('myApp', []);
+app.controller('myController', function($scope, $http,$log) {
+  $http({method:"GET",url: "displaydata.php"})
+  .then(function(response) {
+      $scope.myWelcome = response.data;
+      $log.info(response);
+  },function (reason){
+
+$scope.error = reason.data;
+$log.info(reason);
+  });
+});*/
+var app = angular.module('myApp', []);
+app.controller('myController', function($scope, $http,$log) {
+    var successCallBack=function(response) {
+      $scope.myWelcome = response.data;
+    };
+    var errorCallBack=function (reason){
+
+$scope.error = reason.data;
+//$log.info(reason);
+    };
+  $http({method:"GET",url: "displaydata.php"})
+  .then(successCallBack,errorCallBack);
+  
+});
+</script>
+
+</body>
+</html>
