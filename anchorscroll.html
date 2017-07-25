@@ -1,0 +1,91 @@
+<!doctype html>
+<html ng-app="myModule">
+    <head>
+        <script src="/angular/Scripts/angular.min.js"></script>
+        
+      
+         <link rel="stylesheet" type="text/css" href="./CSS/style.css">
+    </head>
+    <body ng-controller="myController">
+        <button id="top" ng-click="scrollTo('bottom')">Go to buttonof the page </button>
+        <br/>
+        <br/>
+        <div>
+<b>1)What is AngularJS
+2)Angular modules and controllers
+3)Controllers in AngularJS
+4)Two way databinding in AngularJS
+5)AngularJS ng repeat directive
+Today, I have started AngularJS and read some documentation about AngularJS. as well as creating some examples in AngularJS with the following videos. I have created each example and push code into gitHub.
+1)What is AngularJS?
+  AngularJS is JavaScript framework that helps build the web applications.AngularJS developed by google company.AngularJS is open source framework.It is developing for 
+</b>
+<ul><li>
+    1)What is AngularJS?
+  AngularJS is JavaScript framework that helps build the web applications.AngularJS developed is by Google. AngularJS runs on an open source framework. It is developed for single page application. If we want to see the popular website in AngularJs, you go through madewithangular.com.
+  Benefits of angularJs:
+    1)Dependency Injection
+    2)Two way data Binding
+    3)Testing
+    4) Model view controllers
+    5)Directive's,filters etc.
+2)Angular modules and controllers?	
+    1)what is a module and how to create module?
+    2)what is a controller and how to create controller?
+    3)How to register a controller with the module?
+ 3)Controllers in AngularJS?
+   we declared  Controllers in different ways.
+ 4) AngularJS ng src directive
+ 5)Two way data binding in AngularJS ?
+ 
+   Model<--->view
+ 6)AngularJS ng repeat directive
+  1)ng-repeat directive in angularJs
+  2)Nesting ng-repeat with example
+  3)How to finding the index of an item in the collection
+  3)Controllers in AngularJS?
+   we declared  Controllers in different ways.
+ 4) AngularJS ng src directive
+ 5)Two way data binding in AngularJS ?
+ 
+   Model<--->view
+ 6)AngularJS ng repeat directive
+  1)ng-repeat directive in angularJs
+  2)Nesting ng-repeat with example
+  3)How to finding the index of an item in the collection
+  3)Controllers in AngularJS?
+   we declared  Controllers in different ways.
+ 4) AngularJS ng src directive
+ 5)Two way data binding in AngularJS ?
+ 
+   Model<--->view
+ 6)AngularJS ng repeat directive
+  1)ng-repeat directive in angularJs
+  2)Nesting ng-repeat with example
+  3)How to finding the index of an item in the collection
+  3)Controllers in AngularJS?
+   we declared  Controllers in different ways.
+ 4) AngularJS ng src directive
+ 5)Two way data binding in AngularJS ?
+ 
+   Model<--->view
+ 
+    
+
+    </li></ul>
+
+        </div>
+          <button id="bottom" ng-click="scrollTo('top')">Go to Top of the page </button>
+          <script>
+          var app=angular.module("myModule",[])
+          app.controller("myController",function ($scope,$location,$anchorScroll){
+              $scope.scrollTo= function(scrollLocation){
+$location.hash(scrollLocation);
+$anchorScroll.yOffset=20;
+$anchorScroll();
+              }
+
+          });
+          </script>
+    </body>
+</html>

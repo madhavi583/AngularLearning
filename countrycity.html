@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
+     <script src="/angular/Scripts/angular.min.js"></script>
+       <!--<link rel="stylesheet" type="text/css" href="./CSS/style.css"></head>-->
+
+<body ng-controller="myController">
+<span ng-repeat="country in countries ">
+<button ng-click="scrollTo('country.Name')">{{country.Name}} </button>
+</span>
+<br/><br/>
+<div>
+    <fieldset ng-repeat="country in countries" id="{{country.Name}}"> 
+<legend>{{country.Name}}
+<ul><li ng-repeat="city in country.cities">
+    {{city.Name}}
+    </li></ul>
+
+</legend>
+    </fieldset>
+</div>
+<div  > 
+
+<p>HTTP :</p>
+
+<h1>{{countries}}</h1>
+
+</div>
+<div>
+
+<table>
+    <thead>
+        <tr><th>SLNO</th><th>Name</th><th>Gender</th><th>Salary</th></tr>
+    </thead>
+    <tbody>
+    <!--<tr ng-repeat="employee in countries track by $index">
+            <td>{{employee.Id}}</td><td>{{employee.Name}}</td></tr>-->
+    </tbody>
+</table>
+
+
+
+</div>
+
+<script>
+//this correct code
+var app = angular.module('myApp', []);
+app.controller('myController', function($scope, $http,$location,$anchorScroll) {
+  $http({method:"GET",url: "India.php"})
+  .then(function(response) {
+      $scope.countries = response.data;
+      //$log.info(response);
+  });
+$scope.scrollTo =function (countryName) {
+$location.hash(countryName);
+$anchorScroll();
+}
+
+});
+
+</script>
+
+</body>
+</html>
