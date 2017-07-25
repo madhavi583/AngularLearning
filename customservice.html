@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="myModule" >
+    <head>
+        <script src="/angular/Scripts/angular.min.js"></script>
+  
+       <!--<script src="Scripts/customservice.js"></script>-->
+                        </head>
+    <body ng-controller="myController" >
+<table>
+    <tr><td>Your String</td><td><input type="text" ng-model="input"/></td></tr>
+    <tr><td>Result</td><td><input type="text" ng-model="output"/></td></tr>
+    <tr><td></td><td><input type="button" ng-click="transformString(input)" value="Process String" placeholder="Process String"/></td></tr>
+</table>
+<div>
+    <script>
+
+var app = angular.module('myModule', []);
+app.controller('myController', function($scope) {
+   $scope.transformString = function (input) {
+       //$scope.output = stringService.processString(input)
+       if(!input)
+       {
+           return input;
+
+       }
+       var output = " ";
+       for(var i=0; i<input.length; i++){
+           if(i > 0 && input[i] == input[i].toUpperCase())
+           {
+output = output + " ";
+           }
+output =output + input[i];
+       }
+$scope.output =output;
+   }
+});
+</script>
+
+</div>
+</body>
+</html>
