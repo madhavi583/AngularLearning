@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js">
+</script>
+ <script src="/angular/Template/Scripts/script.js"></script>
+ <script src="/angular/Scripts/angular.min.js"></script>
+<body ng-app="myApp">
+
+<p><a href="#/!">Main</a></p>
+
+<a href="#!red">Red</a>
+<a href="#!green">Green</a>
+<a href="#!blue">Blue</a>
+<a href="#!home">Home</a>
+<a href="#!course">course</a>
+
+<div ng-view></div>
+
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/angular", {
+        templateUrl : "main.htm"
+    })
+    .when("/red", {
+        templateUrl : "red.htm"
+    })
+    .when("/green", {
+        templateUrl : "green.htm"
+    })
+    .when("/blue", {
+        templateUrl : "blue.htm"
+    })
+	 .when("/home", {
+        templateUrl : "home.html"
+		
+    })
+    .when("/course", {
+        templateUrl : "course.html"
+    });
+    /*.when("/students", {
+        templateUrl : "blue.htm"
+    });*/
+	
+});
+</script>
+
+<p>Click on the links to navigate to "red.htm", "green.htm", "blue.htm", or back to "main.htm"</p>
+</body>
+</html>

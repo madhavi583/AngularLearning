@@ -3,24 +3,28 @@
     <head>
         <script src="/angular/Scripts/angular.min.js"></script>
         
+      <!--/*<script src="/angular/Template/Scripts/angular-route.js"></script>*/-->
       <!--<script src="/angular/Template/Scripts/angular-route.js"></script>-->
        <script src="/angular/Template/Scripts/angular-route.min.js"></script>
+        <script src="/angular/Template/Scripts/script.js"></script>
        <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.route.min.js
 "></script>-->
          <link rel="stylesheet" type="text/css" href="/angular/Template/CSS/style.css">
     </head>
-    <body ng-controller="myController">
+    <body ng-controller="homeController">
+        <body>
         <table style="font-family:Arial;">
             <tr>
                 <td colspan="2" class=""header><h1>website Header</h1></td>
             </tr>
             <tr>
                 <td class="leftMenu">
-                <a href="#/home">HOME</a>
-                <a href="#/courses">COURSES</a>
-                <a href="#/student">STUDENTS</a>
+                <a href="#!home">HOME</a>
+                <a href="#!course">COURSES</a>
+                <a href="#!students">STUDENTS</a>
                 </td>
                 <td class="mainContent">
+                    <!--<div ng-view></div>-->
                     <ng-view></ng-view>
                     </td>
             </tr>
