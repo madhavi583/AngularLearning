@@ -9,24 +9,27 @@ $routeProvider
  controller: "homeController"
 })
 .when("/course", {
-  templateUrl:"./course.html"
- //controller: "courseController"
+  templateUrl:"./course.html",
+ controller: "courseController"
 })
 .when("/students", {
-  templateUrl:"./students.html"
- //controller: "studentsController"
+  templateUrl:"./joanna.html",
+ controller: "studentsController"
 })
+
+
 })
 .controller("homeController",function($scope){
 $scope.message="HOME PAGE";
 })
-.controller("homeController",function($scope){
+.controller("courseController",function($scope){
 $scope.Courses=["HTML","CSS","PHP","MYSQL","DRUPAL"];
 })
-.controller("homeController",function($scope,$http){
-  $http.get("/angular/Template/webconfig.php")
+.controller("studentsController",function($scope,$http){
+  $http.get("./webconfig.php")
   .then(function(response){
 $scope.students=response.data;
+console.log(response);
   })
 //$scope.students=[{}];
 });
