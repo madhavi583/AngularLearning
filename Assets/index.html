@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="MyApp" ng-strict-di>
+
+  <head>
+    <title>my app</title>
+    <style>ul { padding-left: 0; } li { list-style: none; }</style>
+    <script data-require="angular.js@*"
+            src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.js"></script>
+    <script data-require="ui-router@*" 
+            src="//rawgit.com/angular-ui/ui-router/0.2.15/release/angular-ui-router.js"></script>
+    <script>
+      //document.write('<base href="'+ document.location.pathname +'" />')
+    </script>
+    <script src="http://localhost/angular/Assets/script.js"></script>
+  </head> 
+
+  <body>
+  {{4+6}}
+    <div style="width: 250px; float: left">
+    UI-SREF
+    English
+    <ul>
+      <li><a ui-sref="home({lang: 'en'})">home({lang: 'en'})</a>
+      <li><a ui-sref="activity({lang: 'en'})">activity({lang: 'en'})</a>
+      <li><a ui-sref="page({pagename:'one', lang: 'en'})">page({pagename:'one', lang: 'en'})</a> 
+    </ul>
+    Hebrew
+    <ul>
+      <li><a ui-sref="home({lang: 'he'})">home({lang: 'he'})</a>
+      <li><a ui-sref="activity({lang: 'he'})">activity({lang: 'he'})</a>
+      <li><a ui-sref="page({pagename:'two', lang: 'he'})">page({pagename:'two'})</a>
+    </ul>
+    </div>
+    
+    <div style="width: 150px; float: left">
+    HREF
+    English
+    <ul>
+      <li><a href="#/">#/</a>
+      <li><a href="#/activity">#/activity</a>
+      <li><a href="#/page/three">#/page/three</a>
+    </ul>
+    Hebrew
+    <ul>
+      <li><a href="#/he/">#/he/</a>
+      <li><a href="#/he/activity">#/he/activity</a>
+      <li><a href="#/he/page/three">#/he/page/three</a>
+    </ul>
+    </div>
+    
+    <br clear="all">
+    
+    <div ui-view=""></div>
+    
+
+  </body> 
+
+</html>
