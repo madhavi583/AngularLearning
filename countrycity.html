@@ -6,25 +6,25 @@
        <!--<link rel="stylesheet" type="text/css" href="./CSS/style.css"></head>-->
 
 <body ng-controller="myController">
-<span ng-repeat="country in countries ">
+<!--<span ng-repeat="country in countries ">
 <button ng-click="scrollTo('country.Name')">{{country.Name}} </button>
 </span>
 <br/><br/>
 <div>
-    <fieldset ng-repeat="country in countries" id="{{country.Name}}"> 
+  <fieldset ng-repeat="country in countries" id="{{country.Name}}"> 
 <legend>{{country.Name}}
-<ul><li ng-repeat="city in country.cities">
+<ul><li ng-repeat="city in country.cities track by $index">
     {{city.Name}}
     </li></ul>
 
 </legend>
     </fieldset>
 </div>
-<div  > 
+<div > 
 
 <p>HTTP :</p>
 
-<!--<h1>{{countries}}</h1>-->
+<h1>{{countries}}</h1>
 {{countries}}
 </div>
 <div>
@@ -34,14 +34,14 @@
         <tr><th>SLNO</th><th>Name</th><th>Gender</th><th>Salary</th></tr>
     </thead>
     <tbody>
-    <!--<tr ng-repeat="employee in countries track by $index">
-            <td>{{employee.Id}}</td><td>{{employee.Name}}</td></tr>-->
+    <<tr ng-repeat="employee in countries track by $index">
+            <td>{{employee.Id}}</td><td>{{employee.Name}}</td></tr>
     </tbody>
 </table>
 
 
 
-</div>
+</div>-->
 
 <script>
 //this correct code
@@ -54,6 +54,7 @@ app.controller('myController', function($scope, $http,$location,$anchorScroll) {
   });
 $scope.scrollTo =function (countryName) {
 $location.hash(countryName);
+console.log(countryName);
 $anchorScroll();
 }
 

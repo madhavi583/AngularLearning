@@ -25,9 +25,10 @@ if ($result->num_rows > 0) {
    // echo "<table border='3'>";
     while($row = $result->fetch_assoc()) {
        //echo "<tr><td>$row[Name]</td><td>$row[Name]</td></tr>";
-        echo $row[Name];
+       echo $row[Name];
         //echo  $row["Name"];
        // echo  $row["CountryId"];
+       echo "hello";
          
         }
         //echo "</table>";

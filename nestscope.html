@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+
+     <script src="/angular/Scripts/angular.min.js"></script>
+     
+
+<body>
+    {{4+5}}{{name}}
+<div>
+    <div ng-controller="countrycontroller">
+       {{name}}
+        <div ng-controller="statecontroller">
+  {{$parent.name}} --  {{name}}
+        <div ng-controller="citycontroller"
+        >  {{$parent.$parent.name}} --   {{$parent.name}} -- {{name}}
+        </div>
+    </div>
+    </div>
+<script>
+//this correct code
+var app = angular.module('myApp', [])
+.controller('countrycontroller', function($scope) {
+$scope.name ="india";
+
+})
+.controller('statecontroller', function($scope) {
+$scope.name ="maharashtra";
+
+})
+.controller('citycontroller', function($scope) {
+$scope.name ="mumbai";
+
+});
+
+</script>
+
+</body>
+</html>

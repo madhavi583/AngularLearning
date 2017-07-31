@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="myModule">
+    <head>
+        <script src="/angular/Scripts/angular.min.js"></script>
+        
+      
+         <link rel="stylesheet" type="text/css" href="./CSS/style.css">
+    </head>
+    <body ng-controller="myController as mainTtrl">
+        {{mainTtrl.message}}
+            <script>
+          var app=angular.module("myModule",[])
+          app.controller("myController",function ($scope){
+             this.message= "hello angularJs";
+  });
+          </script>
+    </body>
+</html>

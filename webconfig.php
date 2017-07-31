@@ -1,4 +1,5 @@
 <?php
+echo "hai";
 $servername = "localhost";
 $username = "root";
 $password = "";

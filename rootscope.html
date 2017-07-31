@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="myModule">
+    <head>
+        <script src="/angular/Scripts/angular.min.js"></script>
+        
+     
+    </head>
+    <body >
+        {{4+5}}
+        <div ng-controller="redColourController">
+Root Scope Colour:{{rootScopeColour}}
+Red Colour Controller:{{redColour}}
+Green Colour Controller:{{greenColour}}
+<span style="color:green;" ng-show="greenColour == undefined">greenColour</span>
+
+        </div>
+
+         <div ng-controller="greenColourController">
+Root Scope Colour:{{rootScopeColour}}
+Green Colour Controller:{{greenColour}}
+Red Colour Controller:{{redColour}}
+<span style="color:red;" ng-show="redColour == undefined">redColour</span>
+
+        </div>
+       <script>
+       var app=angular.module("myModule",[])
+       .controller("redColourController",function($scope,$rootScope){
+           $scope.redColour ="i am red colour";
+$rootScope.rootScopeColour="I am root scope colour";
+       })
+        .controller("greenColourController",function($scope){
+           $scope.greenColour ="i am green colour";
+
+
+       })
+       </script>
+
+    </body>
+</html>
