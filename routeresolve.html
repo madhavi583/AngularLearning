@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <!--<script>document.write('<base href="' + document.location + '" />');</script>-->
+    <!--<link rel="stylesheet" href="style.css" />-->
+    <script data-require="angular.js@1.0.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js" data-semver="1.0.7"></script>
+   <!-- <script src="app.js"></script>-->
+	<style>
+	/* Put your css in here */
+
+a {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+ul li  ul {
+  display: none;
+}
+
+.open { 
+   display: block; 
+}
+	</style>
+  </head>
+
+  <body ng-controller="MainCtrl">
+   
+   <a href="#/resolveView">Resolve View</a>
+   
+   <div ng-view></div>
+    
+  </body>
+<script>
+var app = angular.module('myModule', []);
+
+/*
+angular.module('controllers', [])
+    .controller('myCtrl', [function($scope, resolvedVal) { $scope.answer = resolvedVal; }]);
+*/
+
+app.config(['$routeProvider', function($routeProvider) {
+        $routeProvider
+          .when('/resolveView', {
+            templateUrl: 'resolveView.html',
+            controller: 'resolveCtrl',
+            resolve: {
+                resolvedVal: function() {
+                  console.log('a');
+                    return 'madhavi';
+                }
+            }}
+          );
+    }]);
+    
+app.controller('MainCtrl', function($scope, $location) {
+});
+
+app.controller('resolveCtrl', function($scope, resolvedVal) {
+  console.log('b');
+  console.log(resolvedVal);
+  
+});
+
+</script>
+</html>

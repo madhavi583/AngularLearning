@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="myModule">
+    <head>
+        <script src="/angular/Scripts/angular.min.js"></script>
+        
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+       
+        <script src="/angular/Template/Scripts/ui.js"></script>
+      
+         <link rel="stylesheet" type="text/css" href="/angular/Template/CSS/style.css">
+    
+    </head>
+    <body ng-controller="homeController"  >
+       
+        <table style="font-family:Arial;">
+            <tr>
+                <td colspan="2" class=""header><h1>website Header</h1></td>
+            </tr>
+            <tr  >
+                <td class="leftMenu">
+                <a ui-sref="home">HOME</a>
+                <a  ui-sref="course">COURSES</a>
+               <!-- <a href="joanna">STUDENTS</a>-->
+				
+             
+                </td>
+                <td class="mainContent">
+                
+                    <ui-view></ui-view>
+                    </td>
+            </tr>
+<tr><td colspan="2" class=""footer><b>Website Footer</b></td></tr>
+
+        </table>
+    </body>
+</html>
